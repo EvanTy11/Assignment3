@@ -1,0 +1,5 @@
+redis:
+  host: redis-19279.c267.us-east-1-4.ec2.cloud.redislabs.com
+  user: default
+  password: 7sPIO6ZPm9PZgkPWmMI7cIGAAl13PEfH
+  port: 19279
