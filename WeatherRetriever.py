@@ -15,6 +15,6 @@ class WeatherRetriever:
         return sendurl
 
     def getResponse(self, sendurl):
-        '''Gets the repsonce in JSON'''
+        '''Gets the response in JSON'''
         self.response = r.get(sendurl).json()
         return self.response
