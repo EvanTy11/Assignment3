@@ -5,6 +5,7 @@ import processdata
 
 
 class main:
+    ''''Main app class'''
 
     def main():
         '''Main Application function'''

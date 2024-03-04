@@ -2,8 +2,10 @@ import requests as r
 
 
 class WeatherRetriever:
+    '''Class used to connect to openweatherapis API to retrieve weather information in json format'''
 
     def __init__(self, URL, KEY, CITY):
+        '''init constrcutor for our WeatherRetriever class'''
         self.response = None
         self.URL = URL
         self.KEY = KEY

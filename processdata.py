@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 
 
 class processdata:
+    '''Class used to create a data frame and process that data acording to the users needs'''
 
     def createDataFrame(self, fieldlist, rowlist, db):
-        '''takes column list and rowlist  and db connection and creates a dataframe
+        '''takes column list and rowlist and db connection and creates a dataframe
         then returns the dataframe'''
         i = 0
         humidity = []
