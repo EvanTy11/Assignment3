@@ -34,7 +34,7 @@ class main:
                             if typeofprocess.__eq__("median"):
                                 processdata.processdata.getMedian(processdata, df)
                             if typeofprocess.__eq__("mode"):
-                                processdata.processdata.getMedian(processdata, df)
+                                processdata.processdata.getMode(processdata, df)
                             if typeofprocess.__eq__("histogram"):
                                 processdata.processdata.gethisto(processdata, df)
                     elif processinput.__eq__("quit"):
