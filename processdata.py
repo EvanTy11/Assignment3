@@ -35,11 +35,11 @@ class processdata:
         print(df.median())
 
     def getMode(self, df):
-        '''gets the dataframe and prints the mode'''
+        '''takes in the dataframe and prints the mode'''
         print(df.mode())
 
     def gethisto(self, df):
-        '''returns a histogram based on the temperature'''
+        '''takes in the dataframe and returns a histogram based on the temperature'''
         lst = df['temp'].tolist()
         plt.xlabel("Temperature")
         plt.ylabel("count")

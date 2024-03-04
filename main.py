@@ -5,10 +5,10 @@ import processdata
 
 
 class main:
-    ''''Main app class'''
+    ''''Main app class for weather update app'''
 
     def main():
-        '''Main Application function'''
+        '''Main Application function for app menu'''
         d = dbconfig.dbconfig("config.yaml")
         connection = d.get_redis_connection()
         defaultcitylist = ['London', 'New York', 'Miami', 'Tokyo', 'Paris', 'Singapore', 'Montreal', 'Seattle']
