@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import matplotlib.pyplot as plt
 
 
 class processdata:
@@ -24,5 +25,18 @@ class processdata:
         return df
 
     #Gets and prints the average
-    def getAverage(self,df, fieldlist):
-        print(df[fieldlist].mean())
+    def getAverage(self,df):
+        print(df.mean())
+
+    def getMedian(self,df):
+        print(df.median())
+
+    def getMode(self,df):
+        print(df.mode())
+
+    def gethisto(self,df):
+        lst = df['temp'].tolist()
+        plt.xlabel("Temperature")
+        plt.ylabel("count")
+        plt.hist(lst, bins = 5)
+        plt.show()

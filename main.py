@@ -10,8 +10,9 @@ class main:
         #Redis connection
         connection = d.get_redis_connection()
         #Main App menu Loop
-        citylist = ['London','New York']
-        #connection.flushdb()
+        defaultcitylist = ['London','New York', 'Miami','Tokyo', 'Paris', 'Singapore', 'Montreal', 'Seattle']
+        citylist = []
+        connection.flushdb()
         while True:
 
             i = 0
@@ -23,25 +24,43 @@ class main:
 
                     if processinput.__eq__("done"):
                         df = processdata.processdata.createDataFrame(processdata,fieldlist, citylist, connection)
-                        typeofprocess = input("###SelectProcessMenu###: please enter processes you can apply to the fields you addedd ()you want to do EX: mean")
-                        if typeofprocess.__eq__("mean"):
-                            processdata.processdata.getAverage(processdata,df, fieldlist)
+                        while (processinput.__eq__("done")):
+                            typeofprocess = input("###SelectProcessMenu###: please enter processes you can apply to the fields you added you want to do EX: mean, median, histogram mode or enter:quit to quit")
 
+                            if typeofprocess.__eq__("quittypeofprocess"):
+                                processinput = "quit"
+                            if typeofprocess.__eq__("mean"):
+                                processdata.processdata.getAverage(processdata,df)
+                            if typeofprocess.__eq__("median"):
+                                processdata.processdata.getMedian(processdata, df)
+                            if typeofprocess.__eq__("mode"):
+                                processdata.processdata.getMedian(processdata, df)
+                            if typeofprocess.__eq__("histogram"):
+                                processdata.processdata.gethisto(processdata, df)
+                            elif processinput.__eq__("quit"):
+                                typeofprocess = "typeofprocessquit"
                     elif processinput.__eq__("quit"):
                         menuinput = "processquit"
                     fieldlist.append(processinput)
 
             while(menuinput.__eq__("add")):
-                city = input("###AddMenu###: Please add a cityname when finihsed enter done :")
+                city = input("##AddMenu## Please add a cityname(s) or enter default for a default list then enter:done")
                 if city.__eq__("done"):
 
                     while i < len(citylist):
                         menuinput = "main"
                         r1 = WeatherRetriever.WeatherRetriever("https://api.openweathermap.org/data/2.5/weather?q=",
-                                                   "d252374e5abf5d1d0c777e96c85263c1", citylist[i])
-                        print(r1.getResponse(r1.Request()))
+                                                               "d252374e5abf5d1d0c777e96c85263c1", citylist[i])
                         connection.set(citylist[i], json.dumps(r1.getResponse(r1.Request())))
                         i += 1
+
+                elif city.__eq__("default"):
+                    citylist.clear()
+                    print(citylist)
+                    citylist = defaultcitylist
+                    print(citylist)
+
+
                 else:
                    citylist.append(city)
             if menuinput.__eq__("quit"):
