@@ -28,12 +28,15 @@ class processdata:
     def getAverage(self, df):
         print(df.mean())
 
+    # gets and prints the median
     def getMedian(self, df):
         print(df.median())
 
+    # gets and prints the mode
     def getMode(self, df):
         print(df.mode())
 
+    # returns a histogram bases on the temperature
     def gethisto(self, df):
         lst = df['temp'].tolist()
         plt.xlabel("Temperature")
