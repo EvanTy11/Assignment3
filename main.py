@@ -25,10 +25,10 @@ class main:
                     if processinput.__eq__("done"):
                         df = processdata.processdata.createDataFrame(processdata,fieldlist, citylist, connection)
                         while (processinput.__eq__("done")):
-                            typeofprocess = input("###SelectProcessMenu###: please enter processes you can apply to the fields you added you want to do EX: mean, median, histogram mode or enter:quit to quit")
+                            typeofprocess = input("###SelectProcessMenu###: please enter processes you can apply to the fields you added you want to do EX: mean, median, temphistogram mode or enter:quit to quit")
 
-                            if typeofprocess.__eq__("quittypeofprocess"):
-                                processinput = "quit"
+                            if typeofprocess.__eq__("quit"):
+                                processinput = "typeofprocessquit"
                             if typeofprocess.__eq__("mean"):
                                 processdata.processdata.getAverage(processdata,df)
                             if typeofprocess.__eq__("median"):
@@ -37,8 +37,6 @@ class main:
                                 processdata.processdata.getMedian(processdata, df)
                             if typeofprocess.__eq__("histogram"):
                                 processdata.processdata.gethisto(processdata, df)
-                            elif processinput.__eq__("quit"):
-                                typeofprocess = "typeofprocessquit"
                     elif processinput.__eq__("quit"):
                         menuinput = "processquit"
                     fieldlist.append(processinput)
