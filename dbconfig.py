@@ -8,14 +8,15 @@ class dbconfig:
         self.configfile = configfile
 
     def load_config():
-        '''Loads yaml config file'''
+        '''returns yaml config instance'''
         with open("config.yaml", "r") as file:
             return yaml.safe_load(file)
 
     config = load_config()
 
     def get_redis_connection(self):
-        '''establishes redis db connection and returns a redis obj'''
+        '''takes in seld.config
+        returns a redis obj'''
         return redis.Redis(
             host=self.config["redis"]["host"],
             port=self.config["redis"]["port"],

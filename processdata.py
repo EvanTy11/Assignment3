@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 class processdata:
 
     def createDataFrame(self, fieldlist, rowlist, db):
-        '''Method that creates and returns a dataframe'''
+        '''takes column list and rowlist  and db connection and creates a dataframe
+        then returns the dataframe'''
         i = 0
         humidity = []
         df = pd.DataFrame(columns=fieldlist, index=rowlist)
@@ -25,15 +26,15 @@ class processdata:
         return df
 
     def getAverage(self, df):
-        '''Gets and prints the average'''
+        '''takes the dataframe and prints the average'''
         print(df.mean())
 
     def getMedian(self, df):
-        '''gets and prints the median'''
+        '''takes the dataframe and prints the median'''
         print(df.median())
 
     def getMode(self, df):
-        '''gets and prints the mode'''
+        '''gets the dataframe and prints the mode'''
         print(df.mode())
 
     def gethisto(self, df):
