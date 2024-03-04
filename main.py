@@ -7,10 +7,9 @@ import processdata
 class main:
 
     def main():
+        '''Main Application function'''
         d = dbconfig.dbconfig("config.yaml")
-        # Redis connection
         connection = d.get_redis_connection()
-        # Main App menu Loop
         defaultcitylist = ['London', 'New York', 'Miami', 'Tokyo', 'Paris', 'Singapore', 'Montreal', 'Seattle']
         citylist = []
         connection.flushdb()

@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 class processdata:
 
-    # Method that creates and returns a dataframe
     def createDataFrame(self, fieldlist, rowlist, db):
+        '''Method that creates and returns a dataframe'''
         i = 0
         humidity = []
         df = pd.DataFrame(columns=fieldlist, index=rowlist)
@@ -24,20 +24,20 @@ class processdata:
         print(df)
         return df
 
-    # Gets and prints the average
     def getAverage(self, df):
+        '''Gets and prints the average'''
         print(df.mean())
 
-    # gets and prints the median
     def getMedian(self, df):
+        '''gets and prints the median'''
         print(df.median())
 
-    # gets and prints the mode
     def getMode(self, df):
+        '''gets and prints the mode'''
         print(df.mode())
 
-    # returns a histogram based on the temperature
     def gethisto(self, df):
+        '''returns a histogram based on the temperature'''
         lst = df['temp'].tolist()
         plt.xlabel("Temperature")
         plt.ylabel("count")

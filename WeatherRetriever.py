@@ -9,12 +9,12 @@ class WeatherRetriever:
         self.KEY = KEY
         self.CITY = CITY
 
-    # Sends request to weather API and returns url
     def Request(self):
+        '''Sends request to weather API and returns url'''
         sendurl = self.URL + self.CITY + "&appid=" + self.KEY
         return sendurl
 
-    # Gets the repsonce in JSON
     def getResponse(self, sendurl):
+        '''Gets the repsonce in JSON'''
         self.response = r.get(sendurl).json()
         return self.response
