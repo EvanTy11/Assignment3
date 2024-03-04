@@ -54,7 +54,6 @@ class main:
 
                 elif city.__eq__("default"):
                     citylist.clear()
-                    print(citylist)
                     citylist = defaultcitylist
                     print(citylist)
 
