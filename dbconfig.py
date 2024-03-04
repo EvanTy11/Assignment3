@@ -10,10 +10,10 @@ class dbconfig:
         self.configfile = configfile
 
     def load_config():
-        '''returns yaml config instance'''
+        '''Parses config file and returns python obj'''
         with open("config.yaml", "r") as file:
             return yaml.safe_load(file)
-
+    # stores obj for later use
     config = load_config()
 
     def get_redis_connection(self):
