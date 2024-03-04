@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 class processdata:
 
-    # Method that creates and returns are dataframe
+    # Method that creates and returns a dataframe
     def createDataFrame(self, fieldlist, rowlist, db):
         i = 0
         humidity = []
@@ -36,7 +36,7 @@ class processdata:
     def getMode(self, df):
         print(df.mode())
 
-    # returns a histogram bases on the temperature
+    # returns a histogram based on the temperature
     def gethisto(self, df):
         lst = df['temp'].tolist()
         plt.xlabel("Temperature")
