@@ -7,7 +7,7 @@ class dbconfig:
     def __init__(self, configfile):
         self.configfile = configfile
 
-
+    # Loads yaml config file
     def load_config():
 
         with open("config.yaml", "r") as file:
@@ -15,6 +15,7 @@ class dbconfig:
 
     config = load_config()
 
+    #establishes redis db connection and returns a redis obj
     def get_redis_connection(self):
 
         return redis.Redis(

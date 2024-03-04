@@ -1,6 +1,5 @@
 import requests as r
 
-
 class WeatherRetriever:
 
 
@@ -18,10 +17,4 @@ class WeatherRetriever:
     def getResponse(self, sendurl):
         self.response = r.get(sendurl).json()
         return self.response
-       # print(self.response)
-      #  tempkelvin = self.response['main']['temp']
-       # print(tempkelvin)
 
-    def print(self):
-        print(self.URL)
-    # def getJSON():
